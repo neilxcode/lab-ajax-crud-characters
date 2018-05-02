@@ -8,6 +8,8 @@ const hbs          = require('hbs');
 const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
+const Schema       = mongoose.Schema;
+
 
 
 mongoose.Promise = Promise;
@@ -53,6 +55,9 @@ app.locals.title = 'Express - Generated with IronGenerator';
 
 const index = require('./routes/index');
 app.use('/', index);
+
+const CharRoute = require('./routes/characterRoutes');
+app.use('/', CharRoute);
 
 
 module.exports = app;
